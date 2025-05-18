@@ -12,7 +12,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    width: 100%;
+    width: auto;
     background-color: rgba(4, 7, 18, 1);
     /* border: 1px solid red; */
     
@@ -31,7 +31,6 @@ nav .Logo a {
     
 }
 
-
 nav .Logo a:hover{
     text-shadow: 0 0 20px rgb(47, 130, 255);
 }
@@ -47,7 +46,6 @@ nav .Logo a:hover{
 ul li{
     position: relative;
     padding-right: 4rem;
-    
 }
 ul li a {
     font-weight: 500;
@@ -79,7 +77,7 @@ ul li a:hover{
     text-shadow: 0 0 20px #ffffff;
 }
 ul .cart {
-    position: absolute;
+    position:absolute ;
     color: white;
     text-decoration: none;
     width: 37px;
@@ -88,6 +86,23 @@ ul .cart {
     right: 30px;
 }
 
+.cart{
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+.cartcount{
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
 section{
     display: flex;
     align-items: center;
@@ -96,7 +111,7 @@ section{
     height: 340px;
     background-color: rgba(15, 15, 16, 1);
     color: white;
-    font-size: 1.2vw;
+    font-size: 1.2rem;
 }
 
 .Main-Content{
@@ -105,14 +120,14 @@ section{
     /* border: 1px solid red; */
     width: 510px;
     height: 350px;
-    font-size: 1.2vw;
+    font-size: 1.2rem;
     
 }
 
 .Content-title{
     display: flex;
     justify-content: center;
-    font-size: 1.2vw;
+    font-size: 1.2rem;
     /* border: 1px solid red; */
     
 }
@@ -205,15 +220,14 @@ section{
 }
 
 .sidebar{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     margin-left: 5rem;
-    width:14%;
-    height: 17rem;
-    padding-left: 2.5rem;
+    width:auto;
+    height: 15rem;
+    padding-left: 1.5rem;
     /* background: greenyellow; */
     display: flex;
     flex-direction: column;
-    
 }
 
 .sidebar-items{
@@ -230,9 +244,8 @@ section{
     text-decoration: none;
     color: #000000;
     font-weight: 200;
-    font-size: 1.2vw;
     transition: 0.4s;
-    
+    font-size: 19px;
 }
 
 .sidebar-items:hover{
@@ -252,7 +265,6 @@ section{
     justify-content: space-between;
     grid-template-columns: repeat(4,1fr);
     grid-gap:30px
-    
 }
 
 .product-items{
@@ -272,21 +284,20 @@ section{
 
 .product-img{
     width: 100%;
-    height: 17vw;
+    height: 17rem;
     object-fit: cover;
     border-radius: 7px;
 }
 
 .Search-bar{
-   
     position: absolute;
-    /* border: 1px solid; */
-    height: 70%;
-    left: 37%;
+    /* background-color: #2074f3; */
+    height: auto;
     top: 0;
-    padding: 50px;
-    margin-top: 30px;
-    font-size: 1.2vw;
+    padding: 0;
+    margin-top:5.5rem;
+    margin-left: 23rem;
+    
 }
 
 .bar{
@@ -294,29 +305,34 @@ section{
     padding-left: 30px;
 }
 
-.modal{
+.modal,
+.modal-bg{
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0,0.7);
+    background: rgba(0, 0, 0,0.5);
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .modal-page{
+    z-index: 99;
     background: #d3dde4;
     border-radius: 15px;
     padding: 20px;
-    min-width: 30vw;
-    max-width: 50vw;
-    max-height: 30vw;
-    /* overflow: scroll; */
+    width: 57rem;
+    overflow: scroll;
     object-fit: cover;
+    /* border: 1px solid red; */
 }
 
+.modal-page::-webkit-scrollbar{
+    display: none;
+}
 .modaldes-content{
     /* background-color: aqua; */
     display: flex;
@@ -329,8 +345,8 @@ section{
 }
 
 .modaldesc-img{
-    width: 20vw;
-    height: 20vw;
+    width: 20rem;
+    height: 20rem;
     border-radius: 10px;
 }
 
@@ -338,17 +354,17 @@ section{
     /* background: pink; */
     display: flex;
     justify-content: flex-end;
-    margin-top: 6rem;
+    align-items: end;
+   
 }
 
 .btn{
     margin-left: 10px;
-
     padding: 10px 20px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    font-size: 1.2vw;
+    font-size: 1.3rem;
     transition: 0.3s;
 }
 
@@ -357,7 +373,61 @@ section{
     background: linear-gradient(125deg, #2074f3, #0f1597);
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1.2vw;
+    font-size: 1.3rem;
     border: none;
     cursor: pointer;
+    /* border: 1px solid red; */
 }
+
+.cartlist{
+    /* border: 1px solid red; */
+   
+}
+
+.cartlist-itemes{
+    /* background-color: #ff3838; */
+    width: 55rem;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.cartlist-left{
+    display: flex;
+    /* background-color: #16ffa2; */
+}
+
+.cartlist-right{
+    /* border: 1px solid red; */
+    /* background-color: #23b2ff; */
+    display: flex;
+    align-items: center;
+}
+
+.cartlist-left img{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btnc{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.btn-control{
+    margin-top: 0;
+    /* border: 1px solid red; */
+    /* background-color: aqua; */
+}
+
+/*อย่าลืมใส่วงกลมตรงตระกร้าาาาาาาาาาาาาาาาาาาาาาาาาา
+นำเลขจากสิ้นค้า

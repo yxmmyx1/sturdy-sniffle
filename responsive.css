@@ -1,0 +1,79 @@
+@media (max-width: 430px){
+    nav{
+        width: 550px;
+    }
+    nav .Logo a{
+        font-size: 25px;
+        margin-left: 1rem;
+        border: 1px solid red;
+    }
+    nav .nav-pofile{
+        /* border: 1px solid red; */
+        margin-right: 12rem;     
+    }   
+     nav .nav-pofile li{
+        padding-right: 15px;;
+     }
+    nav .nav-pofile li a{
+        /* border: 1px solid rgb(57, 255, 57); */
+        font-size: 14px;
+    }
+    nav .nav-pofile .cart{
+        right: 14px;
+        border: 1px solid red;
+    }
+    nav .nav-pofile .cart li img{
+        font-size: 1px;
+        border: 1px solid red;
+    }
+
+    .Container{
+       border: 1px solid red;
+       height: 810px;
+    }
+    
+    section{
+        width: 130%;
+    }
+    .Main-Content .Content-title {
+        display: flex;
+         border: 1px solid red;
+         margin-right: 20px;
+         width: 100%;
+        padding-left: 1rem;
+    }
+
+      .Main-Content .Content-title h1{
+        font-size: 50px;
+      }
+
+      .Container{
+        width: 550px;
+        height: 100rem;
+        align-self: start;
+     }
+      
+     .Search-bar{
+      margin-left: 5rem;
+     }
+     .sidebar{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      margin-top: -65rem;
+      margin-left: 2rem;
+     }
+     .product{
+      border: 1px solid red;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      /* justify-content: center; */
+      margin-left: -23rem;
+      padding-left: 0rem;
+      height: auto;
+      width: 30rem;
+     }
+     .product-img{
+      object-fit: contain;
+      width: a;
+     }
+}

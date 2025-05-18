@@ -7,6 +7,13 @@
     <title>ElectroZone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -19,15 +26,17 @@
                 <ul>
                     <li><a href="#">ABOUT US</a></li>
                     <li><a href="#">USER</a></li>
-                    <div class='cart'>
+                    <div onclick="openCart()" class='cart' style='cursor:pointer'>
                         <li><a href="#"><img class="cart"
                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAlVJREFUaEPtmD1PFFEUht+3sqaj0yWxptMQLdhQmmhLsMCNNQklJZaUJJQkUGksbEwsUQp+gIUdhdsQOsM/eNlDZpK7d+fjzsydu6zZ25AwH+eZZ95zZnaIBVxcQGYsoVPdtf/DtKQPnrExyctUFkPqTJmWtAngV8GBYwDnJD+FnLTvfUKhjcPAR4/BehPoB3CSg75N1p3fh34GwCLirl3vf8N5266dHlljnjlXcUlyWGejz+0h0Gb/rwNh2Tbb9ncuqxbaqCSZaXcUHs5zkoRCF9lOZXlm1AZBZ7ZtfvtNmgp8qvmbQJc9eFKAD9weagJtEbFsp7Y9M62CobOIWDO64y+FZXsKn7uFmkL7DZkCeioaVrAR9Bwa0ibHyDfTBjplQ85Eo5XplLYnD7BCqY1NJ2zIwmh0MZ2iIWcaMM92K9Ml7yMxJ0nlm2QX6D5tFzZgZ9M9N2RpNFpnOr/iih/CXaJS2oCxTPfxPlIZjc6m+xh/ZbO59btH0T2XFLMha6MRxbRj23612wW0XcEfg1qPvLZkMY6LBi3pCYCXAG5JXofCSXoN4I7kn9BjokBLemvf+gCsZIWPSe5XQUh6AeALgLVsv8+Ti30fAh4L2r6BPPUKviP5vQxC0hWAV972PZIndeCdoSumR+W3EUkqgEs6Pf450chZdkja7S9ckn4DWPc2HpA86t10NvI+Ajh1in0luV2T6TcAvgGwBrb1k+RWHbBt7xyPvIik5wA2ANyQvAgpLmkVgIHa9PgRckxU6NCCMfaLZjoGTOg5ltChprrut5Cm7wGrzs8ui1R7ZgAAAABJRU5ErkJggg==" /></a>
                         </li>
+                        <div id='cartcount' class="cartcount">
+                            0
+                        </div>
                     </div>
                 </ul>
             </div>
         </nav>
-    </header>
         <section>
             <div class="Main-Content">
                 <div class="Content-title" style=" margin-left: 4rem; ">
@@ -45,77 +54,77 @@
         </section>
         <div class="Container">
             <div class="Search-bar">
-                <input class='bar' style="font-size: 1.5rem; font-weight: 200;" type="text"
-                    placeholder="search something...">
+                <input onkeyup="searchsomething(this)" id="txt_search" class='bar'
+                    style="font-size: 1.4rem; font-weight: 300;" type="text" placeholder="search something...">
             </div>
             <div class='sidebar'>
-                <a href="#" class='sidebar-items'>
+                <a onclick="searchproduct('all')" class='sidebar-items'>
+                    All Product
+                </a>
+                <a onclick="searchproduct('EarPhones')" class='sidebar-items'>
                     EarPhones
                 </a>
-                <a href="#" class='sidebar-items'>
+                <a onclick="searchproduct('KeyBoard')" class='sidebar-items'>
                     KeyBoard
                 </a>
-                <a href="#" class='sidebar-items'>
+                <a onclick="searchproduct('WifiRouter')" class='sidebar-items'>
                     Wifi Router
                 </a>
-                <a href="#" class='sidebar-items'>
+                <a onclick="searchproduct('Mouse')" class='sidebar-items'>
                     Mouse
                 </a>
             </div>
-            <div class='product'>
-                <div class='product-items'>
-                    <img class='product-img'
-                        src="https://i.pinimg.com/736x/38/52/23/385223c439a6c48e45fa6efcd0a61b1a.jpg" alt="">
-                    <p style="font-size: 1.2vw; padding-left: 1rem;">Steelseries</p>
-                    <p style="font-size:1vw; padding-left: 1rem;">3500 THB</p>
-                </div>
-                <div class='product-items'>
-                    <img class='product-img'
-                        src="https://hard-digital.com.ar/public/files/Teclado%20Mecanico%20Hyperx%20Alloy%20Origins%2060%20Negro%20Switch%20Red/3.jpg"
-                        alt="">
-                    <p style="font-size: 1.2vw; padding-left: 1rem; ">HyperX Alloy Origins 60</p>
-                    <p style="font-size:1vw; padding-left: 1rem;">3500 THB</p>
-                </div>
-                <div class='product-items'>
-                    <img class='product-img' src="https://m.media-amazon.com/images/I/61mSFiCPgVL._AC_SL1500_.jpg"
-                        alt="">
-                    <p style="font-size: 1.2vw; padding-left: 1rem;">Tenda</p>
-                    <p style="font-size:1vw; padding-left: 1rem;">500 THB</p>
-                </div>
-                <div class='product-items'>
-                    <img class='product-img'
-                        src="https://www.jib.co.th/img_master/product/original/2024102416211971543_1.jpg" alt="">
-                    <p style="font-size: 1.2vw; padding-left: 1rem;">WIRELESS MOUSE AJAZZ AJ159 APEX</p>
-                    <p style="font-size:1vw; padding-left: 1rem;">1830 THB</p>
-                </div>
+            <div id="productlist" class='product'>
+
+
             </div>
-   
-    <div class='modal' style="display: none;" >
-        <div class="modal-bg"></div>
+    </header>
+
+    <div id="modalDesc" class='modal' style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
         <div class="modal-page">
             <h2>Detail</h2>
             <br>
             <div class="modaldes-content">
-                <img class='modaldesc-img' src="https://i.pinimg.com/736x/38/52/23/385223c439a6c48e45fa6efcd0a61b1a.jpg"
-                    alt="">
+                <img id='mdd-img' class='modaldesc-img'
+                    src="https://i.pinimg.com/736x/38/52/23/385223c439a6c48e45fa6efcd0a61b1a.jpg" alt="">
                 <div class="modaldesc-detail">
-                    <P style="font-size:1.5vw ;">Product name</P>
-                    <p style='font-size: 1.2vw;'>3500 THB</p>
+                    <P id='mdd-name' style="font-size:1.5vw ;">Product name</P>
+                    <p id='mdd-price' style='font-size: 1.2vw;'>3500 THB</p>
                     <br>
-                    <p style='color: #adadad;'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nesciunt officiis placeat recusandae, rem ducimus eligendi quae nostrum ex expedita quam cumque rerum porro doloribus.</p>
+                    <p id='mdd-dest' style='color: #adadad;'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Dolores nesciunt officiis placeat recusandae, rem ducimus eligendi quae nostrum ex expedita quam
+                        cumque rerum porro doloribus.</p>
                     <br>
                     <div class="btn-control">
-                        <button class ='btn'>
+                        <button onclick="closeModal()" class='btn'>
                             Close
                         </button>
-                        <button class ='btn-buy'>
+                        <button onclick="addtocart()" class='btn-buy'>
                             Add to cart
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
 
-</html>
+
+    </div>
+    <div id="modalCart" class='modal' style="display: none;">
+        <div onclick='closeModal()' class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>My Cart</h2>
+            <br>
+            <div id="mycart" class="cartlist">
+
+            </div>
+            <div class="btn-control">
+                <button onclick="closeModal()" class="btn">
+                    Cancal
+                </button>
+                <button class="btn btn-buy">
+                    Buy
+                </button>
+            </div>
+        </div>
+    </div>
